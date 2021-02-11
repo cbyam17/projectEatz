@@ -26,7 +26,7 @@
   
 
   <!-- Link to custom style sheet -MByam -->
-  <link rel="stylesheet" href="add-recipe.scss"/>
+  <link rel="stylesheet" href="add-recipe.css">
 </head>
 <body>
   <section class="menu cid-s48OLK6784" once="menu" id="menu1-m">
@@ -63,91 +63,138 @@
      <script src="assets/theme/js/script.js"></script>  
   
 <!-- Everything above needs work. Talk to chris about how to get rid of the Mobirise line that doesnt mess up the Nav Bar -->
-
     <form>
         <!-- Recipe name form and headers for page -->
-        <h1 class="display-3"> Add a Recipe! </h1>
-        <h1 class="display-3.5"> Give Your Recipe a Fancy Name! </h1>
-        <div id = recipeName>
-            <div class="col-sm-12 col-md-4">
-                <input type = "text" class = "form-control" placeholder = "Recipe Name">
+        <div class="jumbotron" id="recipeJumbotron">
+            <h1 class="display-3"> Create Your Own Recipe </h1>
+                <div id = recipeDetails>
+                    <center>
+                    <div id = recipeName>
+                        <div class="col-sm-12 col-md-4">
+                            <input type = "text" class = "form-control" placeholder = "Recipe Name">
+                        </div>
+                    </div>
+                    <div id = prepTime>
+                        <div class="col-sm-12 col-md-4">
+                            <input type = "text" class = "form-control" placeholder = "Prep Time">
+                        </div>
+                    </div>
+                    <div id = cookTime>
+                        <div class="col-sm-12 col-md-4">
+                            <input type = "text" class = "form-control" placeholder = "Cook Time">
+                        </div>
+                    </div>
+                    <div id = servings>
+                        <div class="col-sm-12 col-md-4">
+                            <input type = "text" class = "form-control" placeholder = "Servings">
+                        </div>
+                    </div>
+                    </center>
+                </div>
+        
+
+            <!-- Drop down bar menu for meal type -->
+            <br><h3> What Type of Meal is it? </h3>
+            <div id = mealType>
+                <div class="col-sm-12 col-md-4">
+                <label class="sm-2" for="inlineformcustomselect"> Type </label>
+                    <select class="custom-select sm-2">
+                    <option selected> Select one...</option>
+                    <option value="1">Breakfast & Brunch</option>
+                    <option value="2">Appetizers & Snacks</option>
+                    <option value="3">Salads & Sides</option>
+                    <option value="4">Soups, Stews & Chilies</option>
+                    <option value="5">Burgers, Wraps & Sandwiches</option>
+                    <option value="6">Pasta, Noodles & Stir Fry</option>
+                    <option value="7">Pizza & Flatbreads</option>
+                    <option value="8">Meat Main Dishes</option>
+                    <option value="9">Grains</option>
+                    <option value="10">Desserts</option>
+                    <option value="11">Sauces & Condiments</option>
+                    <option value="12">Beverages</option>
+                    <option value="13">Other</option>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <!-- Drop down bar menu for meal type -->
-        <br><h3> What Type of Meal is it? </h3>
-        <div id = mealType>
-            <label class="sm-2" for="inlineformcustomselect"> Type </label>
-                <select class="custom-select sm-2">
-                <option selected> Choose...</option>
-                <option value="1">Appitizer</option>
-                <option value="2">Main</option>
-                <option value="3">Dessert</option>
-                <option value="4">Other</option>
-            </select>
-        </div>
+            <!-- Table which holds each ingredient -->
+            <br><h3> Ingredients </h3>
+            <div class = "Ingredients">
+            <table id="myTable" class="table ingr-list">
+                <!-- Headers-->
+                <thead>
+                    <tr>
+                        <td>Amount</td>
+                        <td>Measure</td>
+                        <td>Ingredient Name</td>
+                        <td> Special Notes (optional)</td>
+                    </tr>
+                </thead>
+                <!-- Preexisting forms -->
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name = "ingrList" id="Amount" class="form-control" placeholder="ex. 1, 3/4, 2 1/2"/>
+                        </td>
+                        <td>
+                            <input type="text" name = "ingrList" id="Measure"  class="form-control" placeholder="ex. cups, teaspoons, pinch"/>
+                        </td>
+                        <td>
+                            <input type="text" name = "ingrList" id="Ingredient"  class="form-control" placeholder="ex. basil, quinoa, sugar"/>
+                        </td>
+                        <td>
+                            <input type="text" name = "ingrList" id="Note"  class="form-control" placeholder="ex. fresh, diced, organic"/>
+                        </td>
+                        <td><a class="delRowHolder"></a></td>
+                    </tr>
+                </tbody>
 
-        <!-- Table which holds each ingredient -->
-        <br><h3> Ingredients </h3>
-        <div class = "Ingredients">
-        <table id="myTable" class="table ingr-list">
-            <!-- Headers-->
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Amount</td>
-                    <td>Measure</td>
-                </tr>
-            </thead>
-            <!-- Preexisting forms -->
-            <tbody>
-                <tr>
-                    <td>
-                        <input type="text" name = "ingrList" id="Name" class="form-control"/>
-                    </td>
-                    <td>
-                        <input type="text" name = "ingrList" id="Amount"  class="form-control"/>
-                    </td>
-                    <td>
-                        <input type="text" name = "ingrList" id="Measure"  class="form-control"/>
-                    </td>
-                    <td><a class="delRowHolder"></a></td>
-                </tr>
-            </tbody>
-            <!-- Add Ingredient Button under table -->
-            <tfoot>
-                <tr>
-                    <td colspan="1">
-                        <input type="button" class="btn-success" id="addrow" value="Add Ingredient"/>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        </div>
+                <!--
+                    Mom Vetoed the Special Note section and wanted it in the ingredient list
+                -->
 
-        <!-- Notes section for ingredients -->
-        <h3>Special Ingredient Notes</h3>
-        <div id = "notes">
-            <textarea class="form-control" rows="3" placeholder="Notes"></textarea>
-        </div>
+                <!-- Add Ingredient Button under table -->
+                <tfoot>
+                    <tr>
+                        <td colspan="1">
+                            <input type="button" class="btn-success" id="addrow" value="Add Ingredient"/>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
 
-        <!-- Instruction to make the recipe,
-        ** This section will be chagned to comply with dynamic step by step logic -->
-        <br><h3> Instructions </h3>
-        <div id = "instructions">
-            <textarea class="form-control" rows="5"></textarea>
-        </div>
 
-        <!-- Upload image of the meal -->
-        <br><h3>Upload a Picture of your meal! </h3>
-        <div id="mealPicture">
-            <label class="form-label" for="cusotmFile"> Select the Image from Files</label>
-            <input type="file" class="form-control" id="customfile" />
-        </div>
+            <!--
+                    Mom Vetoed the Special Note section and wanted it in the ingredient list
+                -->
+            <!-- Notes section for ingredients -->
+        <!-- <h3>Special Ingredient Notes</h3>
+            <div id = "notes">
+                <textarea class="form-control" rows="3" placeholder="Notes"></textarea>
+            </div>-->
 
-        <!-- submit button for the form to be sent -->
-        <div id="submitButton">
-            <br><button type="submit"> Submit Recipe</button>
+
+            <!-- Instruction to make the recipe,
+            ** This section will be chagned to comply with dynamic step by step logic -->
+            <br><h3> Instructions </h3>
+            <div id = "instructions">
+                <textarea class="form-control" rows="5"></textarea>
+            </div>
+
+            <!-- Upload image of the meal -->
+            <br><h3>Upload a Picture! </h3>
+            <div id="mealPicture">
+                <label class="form-label" for="cusotmFile"> Select the Image from Files</label>
+                <input type="file" class="form-control" id="customfile" />
+            </div>
+
+            <!-- submit button for the form to be sent -->
+            <div id="submitButton">
+                <div class="col-sm-12" id="submitContainer">
+                    <br><center><button type="submit" class="btn-success" id="submitButton1"> Submit Recipe</button></center>
+                </div>
+            </div>
         </div>
     </form>
     <script src="add-recipe.js"></script> <!-- Link to JS page -->

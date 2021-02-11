@@ -1,0 +1,46 @@
+/*
+    SCSS Style sheet for add-recipe
+*/
+
+body{
+    background-image:url("https://www.selectmarket.ae/wp-content/uploads/2020/09/fresh-food-2.jpg");
+
+    .jumbotron{
+        margin:100px;
+        border-radius: 50px;
+        background-color: #fafadf;
+
+        h1{
+            text-align:center;
+        }
+
+        #recipeDetails{
+            #recipeName{
+                margin-bottom: 10px;
+            }
+            #prepTime{
+                margin-bottom: 10px;
+            }
+            #cookTime{
+                margin-bottom: 10px;
+            }
+            #servings{
+                margin-bottom: 10px;
+            }
+        }
+
+        #submitButton1{
+            font-size: 28px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #submitButton1:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        
+        #submitContainer{
+            width:max;
+        }
+    }
+}

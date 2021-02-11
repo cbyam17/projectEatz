@@ -16,8 +16,9 @@ $(document).ready(function () {
         cols += '<td><input type="text" class="form-control" name = "ingrList" id="amount"/></td>';
         cols += '<td><input type="text" class="form-control" name = "ingrList" id="measure"/></td>';        
         cols += '<td><input type="text" class="form-control" name = "ingrList" id="ingredient"/></td>';
+        cols += '<td><input type="text" class="form-control" name = "ingrList" id="notes"/></td>'
 
-        cols += '<td><input type="button" class="btnDel" value="Remove Ingredient"></td>';
+        cols += '<td><input type="button" class="btnDel btn-danger" value="Remove Ingredient" id="removeIngredient"></td>';
         newRow.append(cols);
         $("table tbody").append(newRow);
         counter++;
