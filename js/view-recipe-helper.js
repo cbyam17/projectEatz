@@ -66,7 +66,7 @@
 			//for each ingredient, build table body
 			var tableBody = document.createElement("tbody");
 			for (i=0; i<ingredients.length; i++){
-				console.log(ingredients[i]);
+				//console.log(ingredients[i]);
 				var tableRow = document.createElement("tr");
 				var ingredientData = document.createElement("td");
 				var amountData = document.createElement("td");
