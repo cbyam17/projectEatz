@@ -50,7 +50,7 @@
 			var tableHeadAmount = document.createElement("td");
 			var tableHeadMeasure = document.createElement("td");
 			var tableHeadNotes = document.createElement("td");
-			var nameLabel = document.createTextNode("Name");
+			var nameLabel = document.createTextNode("Ingredient");
 			var amountLabel = document.createTextNode("Amount");
 			var measureLabel = document.createTextNode("Measure");
 			var notesLabel = document.createTextNode("Notes");
