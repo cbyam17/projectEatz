@@ -60,23 +60,56 @@
 
 	</section>
 
-	<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/k" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Built with <a href="https://mobirise.site/a" style="color:#aaa;">Mobirise</a></p></section><script src="assets/web/assets/jquery/jquery.min.js"></script><script src="assets/popper/popper.min.js"></script> <script src="assets/tether/tether.min.js"></script> <script src="assets/bootstrap/js/bootstrap.min.js"></script> <script src="assets/smoothscroll/smooth-scroll.js"></script> <script src="assets/dropdown/js/nav-dropdown.js"></script> <script src="assets/dropdown/js/navbar-dropdown.js"></script> <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script> <script src="assets/theme/js/script.js"></script>  
+	<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/k" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a></section><script src="assets/web/assets/jquery/jquery.min.js"></script><script src="assets/popper/popper.min.js"></script> <script src="assets/tether/tether.min.js"></script> <script src="assets/bootstrap/js/bootstrap.min.js"></script> <script src="assets/smoothscroll/smooth-scroll.js"></script> <script src="assets/dropdown/js/nav-dropdown.js"></script> <script src="assets/dropdown/js/navbar-dropdown.js"></script> <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script> <script src="assets/theme/js/script.js"></script>  
   
 	<section>
-		<div id="name">
-			<p id="nameLabel"><b>Recipe Name</b></p>
-		</div>
-		<div id="category">
-			<p id="categoryLabel"><b>Category</b></p>
-		</div>
-		<div id="ingredients">
-			<p id="ingredientsLabel"><b>Ingredients</b></p>
-		</div>
-		<div id="directions">
-			<p id="directionsLabel"><b>Directions</b></p>
-		</div>
-		<div id="picture">
-			<p id="pictureLabel"><b>Picture</b></p>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+						<b>Recipe Details</b></h3>
+					
+				</div>
+			</div>
+			<div class="row">
+				<br></br>
+			</div>
+			<div class="row">
+				<div class="card col-12 col-md-6 col-lg-4">
+					<div class="card-wrapper">
+						<div class="card-box align-left">
+							<div id="name" class="card-title mbr-fonts-style display-7">
+								<p id="nameLabel"> <b>Name</b></p>
+							</div>
+							<div id="category" class="card-title mbr-fonts-style display-7">
+								<p id="categoryLabel"><b>Category</b></p>
+							</div>
+							<div id="ingredients" class="card-title mbr-fonts-style display-7">
+								<p id="ingredientsLabel"><b>Ingredients</b></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card col-12 col-md-6 col-lg-4">
+					<div class="card-wrapper">
+						<div class="card-box align-left">
+							<div id="directions" class="card-title mbr-fonts-style display-7">
+									<p id="directionsLabel"><b>Directions</b></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card col-12 col-md-6 col-lg-4">
+					<div class="card-wrapper">
+						<div class="card-box align-left">
+							<div id="picture" class="card-title mbr-fonts-style display-7">
+								<p id="pictureLabel"><b>Picture</b></p>
+								<img src="Burger.jpg" alt="Flowers in Chania">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section> 
  
@@ -122,11 +155,11 @@
 			element.appendChild(tag);
 
 			//add recipe picture
-			var tag = document.createElement("p");
-			var text = document.createTextNode(recipeJSON.picture);
-			tag.appendChild(text);
-			var element = document.getElementById("picture");
-			element.appendChild(tag);
+			//var tag = document.createElement("p");
+			//v//ar text = document.createTextNode(recipeJSON.picture);
+			//tag.appendChild(text);
+			//var element = document.getElementById("picture");
+			//element.appendChild(tag);
 		}
 		
 	  </script>
