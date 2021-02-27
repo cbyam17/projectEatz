@@ -10,7 +10,6 @@
 		fetch(req, {
 			method: 'GET',
 			headers: {
-				'Content-Type': 'application/json',
 				'authorizationToken': authToken
 			}
 		})
@@ -58,8 +57,8 @@
 			tableHeadAmount.appendChild(amountLabel);
 			tableHeadMeasure.appendChild(measureLabel);
 			tableHeadNotes.appendChild(notesLabel);
-			tableHeadRow.appendChild(tableHeadIngredient);
 			tableHeadRow.appendChild(tableHeadAmount);
+			tableHeadRow.appendChild(tableHeadIngredient);
 			tableHeadRow.appendChild(tableHeadMeasure);
 			tableHeadRow.appendChild(tableHeadNotes);
 			tableHead.appendChild(tableHeadRow);
@@ -80,8 +79,8 @@
 				amountData.appendChild(amountText);
 				measureData.appendChild(measureText);
 				notesData.appendChild(notesText);
-				tableRow.appendChild(ingredientData);
 				tableRow.appendChild(amountData);
+				tableRow.appendChild(ingredientData);
 				tableRow.appendChild(measureData);
 				tableRow.appendChild(notesData);
 				tableBody.appendChild(tableRow);

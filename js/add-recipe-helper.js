@@ -49,9 +49,13 @@ $(document).ready(function () {
 		//serialize form data as formatted JSON object (this doesn't capture the picture)
 		var obj = $(this).serializeJSON();
 		var jsonString = JSON.stringify(obj);
+		
+		//additional logic here to get the picture and send it to s3 bucket somewhere
 	
 		//call api to add recipe
 		$.post( "https://d8qga9j6ob.execute-api.us-east-1.amazonaws.com/dev/recipe", jsonString);
+		
+		//get response from this post, save the recipeId returned, and then add to s3 with the name of that id
 		
 		//code to be implemented later for uploading the image to AWS s3
 		
