@@ -2,7 +2,7 @@
 <html  >
 <head>
   <title>Recipe Details</title>  
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
   <script type="text/javascript" src="js/jquery.min.js"></script> 
   <script type="text/javascript" src="js/view-recipe-helper.js"></script>
 </head>
@@ -10,40 +10,60 @@
 <body>
 
 	<section>
-		<h1><strong>Recipe Details</strong></h3>
-		
-		<!-- will need to be replaced from image from s3 bucket -->
-		<div id="picture">
-			<img src="img/Burger.jpg" alt="twitter" width="200" height="200">
+		<a href="index.html">
+			<img src="img/Project-Eatz.png" alt="project-eatz" width="75" height="75">
+		</a>	
+	</section>
+	
+	<section>
+		<div class="flex-container-wrap">
+			<div id="recipeName"></div>
 		</div>
 		
-		<div id="recipeName">
-			<h3><strong>Name</strong></h3>
+		<div class="flex-container-nowrap">
+			<!-- will need to be replaced from image from s3 bucket -->
+			<div id="picture">
+				<img src="img/Burger.jpg" alt="twitter" width="200" height="200">
+			</div>
+			
+			<div id="description"></div>
 		</div>
 		
-		<div id="description">
-			<h3><strong>Description</strong></h3>
+		<div class="flex-container-nowrap">
+			<div class="card">
+				<div class="container" id="category">
+					<h3 id="categoryLabel"><strong>Category</strong></h3>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container" id="servings">
+					<h3 id="servingsLabel"><strong>Servings</strong></h3>
+					<p>1</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="container" id="prepTime">
+					<h3 id="prepTimeLabel"><strong>Prep Time</strong></h3>
+					<p>45 minutes</p>
+				</div>
+			</div>		
 		</div>
 		
-		<div id="category">
-			<h3 id="categoryLabel"><strong>Category</strong></h3>
+		<div class="flex-container-wrap">
+			<div id="ingredients">
+				<h3 id="ingredientsLabel"><strong>Ingredients</strong></h3>
+			</div>
+			<div id="directions">
+				<h3 id="directionsLabel"><strong>Directions</strong></h3>
+			</div>
 		</div>
 		
-		<div id="ingredients">
-			<h3 id="ingredientsLabel"><strong>Ingredients</strong></h3>
-		</div>
-		
-		<div id="directions">
-			<h3 id="directionsLabel"><strong>Directions</strong></h3>
-		</div>
 	</section>
 	
 	<section>
 		<br>
 		<div id="home">
-            <a href="index.html">
-				<button>Home</button>
-			</a>
+            <a class="button3" href="index.html">Home</a>
         </div>
 	<section>
  

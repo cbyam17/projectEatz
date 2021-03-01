@@ -19,7 +19,7 @@
 		function populateRecipeDetails(dataJSON){
 			
 			//add recipe name
-			var tag = document.createElement("p");
+			var tag = document.createElement("h1");
 			var text = document.createTextNode(dataJSON.recipeName);
 			tag.appendChild(text);
 			var element = document.getElementById("recipeName");
@@ -43,7 +43,7 @@
 			var ingredients = dataJSON.ingredients;
 			var table = document.createElement("table");
 			//build table head
-			var tableHead = document.createElement("thead");
+			/*var tableHead = document.createElement("thead");
 			var tableHeadRow = document.createElement("tr");
 			var tableHeadIngredient = document.createElement("td");
 			var tableHeadAmount = document.createElement("td");
@@ -58,10 +58,10 @@
 			tableHeadMeasure.appendChild(measureLabel);
 			tableHeadNotes.appendChild(notesLabel);
 			tableHeadRow.appendChild(tableHeadAmount);
-			tableHeadRow.appendChild(tableHeadIngredient);
 			tableHeadRow.appendChild(tableHeadMeasure);
+			tableHeadRow.appendChild(tableHeadIngredient);
 			tableHeadRow.appendChild(tableHeadNotes);
-			tableHead.appendChild(tableHeadRow);
+			tableHead.appendChild(tableHeadRow);*/
 			//for each ingredient, build table body
 			var tableBody = document.createElement("tbody");
 			for (i=0; i<ingredients.length; i++){
@@ -80,13 +80,13 @@
 				measureData.appendChild(measureText);
 				notesData.appendChild(notesText);
 				tableRow.appendChild(amountData);
-				tableRow.appendChild(ingredientData);
 				tableRow.appendChild(measureData);
+				tableRow.appendChild(ingredientData);
 				tableRow.appendChild(notesData);
 				tableBody.appendChild(tableRow);
 			}
 			//add table head and body to new table, then add new table to ingredients
-			table.appendChild(tableHead);
+			//table.appendChild(tableHead);
 			table.appendChild(tableBody);
 			var element = document.getElementById("ingredients");
 			element.appendChild(table);				
