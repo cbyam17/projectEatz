@@ -14,10 +14,10 @@ $(document).ready(function () {
 
         // forms that will be added
 		cols += '<td><input type="text" class="form-control" name = "ingredients[][name]" id="name"/></td>';
-        cols += '<td><input type="number" class="form-control" name = "ingredients[][amount]" id="amount"/></td>';
+        cols += '<td><input type="number" class="form-control-number" name = "ingredients[][amount]" id="amount"/></td>';
         cols += '<td><input type="text" class="form-control" name = "ingredients[][measure]" id="measure"/></td>';        
-		cols += '<td><input type="text" class="form-control" name = "ingredients[][notes]" id="notes"/></td>';
-        cols += '<td><input type="button" class="button2" value="x"></td>';
+		cols += '<td><textarea class="form-control" rows="2" cols="30" name = "ingredients[][notes]" id="notes"></textarea></td>';
+        cols += '<td><input type="button" class="delete-button" value="x"></td>';
         newRow.append(cols);
         $("#ingredientsTable tbody").append(newRow);
         counter++;
@@ -29,15 +29,15 @@ $(document).ready(function () {
         var cols = "";
 
         // forms that will be added
-        cols += '<td><textarea class="form-control" rows="3" cols="50" name="directions[]" id="direction"></textarea></td>';
-        cols += '<td><input type="button" class="button2" value="x"</td>';
+        cols += '<td> <textarea class="form-control" rows="2" cols="95" name="directions[]" id="direction"></textarea></td>';
+        cols += '<td><input type="button" class="delete-button" value="x"</td>';
         newRow.append(cols);
         $("#directionsTable tbody").append(newRow);
         counter++;
     });
 	
     // function which is called when class = btnDel is called (AKA Remove Ingredient button)
-    $("table.ingr-list").on("click",".button2",function (event) {
+    $("table.ingr-list").on("click",".delete-button",function (event) {
         $(this).closest("tr").remove();       
         counter -= 1;
     });

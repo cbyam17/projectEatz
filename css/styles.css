@@ -16,8 +16,12 @@
   background: #008ED6;
 }
 
+.center{
+	padding: 70px 0;
+}
+
 .flex-child-label {
-    flex: 0 0 175px;
+    flex: 0 0 150px;
 } 
 
 .flex-child-value {
@@ -29,14 +33,26 @@
 	text-align: right;
 }
 
+.flex-child-center {
+    flex: 1;
+	text-align: center;
+}
+
+.flex-child-right-nav {
+    flex: 1;
+	text-align: right;
+	padding: 17px 0; /*for the nav bar. might have to change*/
+}
+
 .flex-container-nowrap {
   display: flex;
   flex-wrap: nowrap;
 }
 
+
 .flex-container-nowrap > div {
   margin: 10px;
-  background-color: #d3d3d3;
+  background-color: #white;
   width: 100%;
 }
 
@@ -45,18 +61,16 @@
   flex-wrap: wrap;
 }
 
+
 .flex-container-wrap > div {
   margin: 10px;
-  background-color: #d3d3d3;
+  background-color: #white;
   width: 100%;
-}
-
-.form{
-	background-color: #d3d3d3;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #8594a3;
   transition: 0.3s;
   width: 32%;
 }
@@ -67,76 +81,11 @@
 
 .container {
   padding: 2px 10px;
-  background-color: #4eb5f1;
+  background-color: #8594a3;
   color: white;
+  text-align: center;
 }
 
-/*add button*/
-.button1{
-	display:inline-block;
-	padding:0.3em 1.2em;
-	margin:0 0.3em 0.3em 0;
-	border-radius:2em;
-	box-sizing: border-box;
-	text-decoration:none;
-	font-family:'Roboto',sans-serif;
-	font-weight:300;
-	color:#FFFFFF;
-	background-color: #1fc600;
-	border:none;
-	text-align:center;
-	transition: all 0.2s;
-}
-
-.button1:hover{
-	background-color:#089000;
-}
-@media all and (max-width:30em){
-	.button1{
-		display:block;
-		margin:0.2em auto;
-	}
-}
-
-/*delete button*/
-.button2{
-	display:inline-block;
-	padding:0.3em 1.2em;
-	margin:0 0.3em 0.3em 0;
-	border-radius:2em;
-	box-sizing: border-box;
-	text-decoration:none;
-	font-family:'Roboto',sans-serif;
-	font-weight:300;
-	color:#FFFFFF;
-	background-color:#b53737;
-	border:none;
-	text-align:center;
-	transition: all 0.2s;
-}
-.button2:hover{
-	background-color:#b53737; /*lighter shade of red*/
-}
-
-/*submit button*/
-.button4{
-	display:inline-block;
-	padding:0.3em 1.2em;
-	margin:0 0.3em 0.3em 0;
-	border-radius:2em;
-	box-sizing: border-box;
-	text-decoration:none;
-	font-family:'Roboto',sans-serif;
-	font-weight:300;
-	color:#FFFFFF;
-	background-color:#4eb5f1;
-	border:none;
-	text-align:center;
-	transition: all 0.2s;
-}
-.button4:hover{
-	background-color:#01579b; /*lighter shade of red*/
-}
 
 .image-upload > input
 {
@@ -320,8 +269,7 @@ a {
 
 .navbar-fixed-top,
 .navbar-fixed-top.bottom {
-  background-color: rgb(255,255,255);
-  position: fixed;
+  background-color: #8594a3;
   bottom: inherit;
   padding: 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -370,10 +318,10 @@ a {
 
 @media (min-width:768px) {
   .navbar-fixed-top{
-    background-color: rgba(255,255,255,0.95);
+    background-color: #8594a3;
     border: none;
     margin: 0;
-    padding: 20px 0 !important;
+    padding: 5px 0 !important;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     -webkit-transition : .2s;
     -moz-transition : .2s;
@@ -1170,60 +1118,6 @@ span.quot-name:before {
   margin: 0;
   padding: 40px 0 0;
   height: 100%;
-}
-
-.form-control, .btn.submit {
-  margin: 10px;
-  border-radius: 0;
-  border-color: #555;
-  border-width: thin;
-  color: #black;
-  background-color: white;
-}
-
-.form-control:focus {
-  border-color: #008ED6;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(0, 142, 214, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(0, 142, 214, 0.6);
-}
-
-textarea.form-control {
-  max-width: 100%;
-  background-color: white;
-  font-family:'Roboto',sans-serif;
-}
-
-.btn.submit {
-  position: relative;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all .3s;
-  padding-right: 40px;
-  padding-left: 40px;
-  color: #999;
-  z-index: 1;
-}
-
-.btn.submit:hover {
-  color: #fff;
-  border-color: #aaa;
-}
-
-.btn.submit:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #008ED6;
-  width: 0;
-  z-index: -1;
-  transition: all .3s;
-}
-
-.btn.submit:hover:after {
-  width: 100%;
 }
 
 address span {

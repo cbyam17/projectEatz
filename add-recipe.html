@@ -3,6 +3,8 @@
 <head>
   <title>Add Recipe</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/forms.css">
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.serializejson.js"></script>
   <script type="text/javascript" src="js/add-recipe-helper.js"></script>
@@ -10,48 +12,63 @@
 
 <body>
 	<section>
-		<a href="index.html">
-			<img src="img/Project-Eatz.png" alt="project-eatz" width="75" height="75">
-		</a>	
+		<div class="navbar-fixed-top">
+			<div class="flex-container-nowrap">
+				<div class="flex-child-value">
+					<a href="index.html">
+						<img src="img/Project-Eatz.png" alt="project-eatz" width="75" height="75">
+					</a>
+				</div>
+				<div class="flex-child-right-nav">
+					<a href="index.html" class="center">
+						<img src="img/search-icon.png" alt="search" width="40" height="40">
+					</a>
+				</div>
+			</div>
+		</div>
 	</section>
 	
 	<section>
+		<div class="flex-container-wrap">
 				<div>
 					<h1><strong>Add a Recipe</strong></h1>
 				</div>
+		</div>
 		 <form class="form" name="addRecipeForm" id="addRecipeForm" accept-charset="utf-8" autocomplete="on">        
 			<!-- Recipe name form and headers for page -->
 	 
 			<div class="flex-container-wrap">
 				<div class="flex-child-label" id=recipeName>
-					<h3><strong>Name</strong></h3>
+					<label>Name</label>
 				</div>
 				<div class="flex-child-value">
-					<input type="text" size="48" class="form-control" name="recipeName" id="recipeName">
+					<input type="text" placeholder="My Super Awesome Recipe" size="48" class="form-control" name="recipeName" id="recipeName">
 				</div>
 			</div>
 			
 			<div class="flex-container-wrap">
 				<div class="flex-child-label" id="description">
-					<h3><strong>Description</strong></h3>
+					<label>Description</label>
 				</div>
 				<div class="flex-child-value">
-					<textarea class="form-control" rows="5" cols="50" placeholder="Describe the recipe" name="description" id="description"></textarea>
+					<textarea class="form-control" rows="5" cols="50" placeholder="This is the best recipe you will ever make" name="description" id="description"></textarea>
 				</div>
 			</div>
 
 			<!-- Drop down bar menu for meal type -->
 			<div class="flex-container-wrap">
 				<div class="flex-child-label" id=category>
-					<h3><strong>Category</strong></h3>
+					<label>Category</label>
 				</div>
 				<div class="flex-child-value">
 					<!-- <label class="sm-2" for="inlineformcustomselect"> Category </label> -->
 					<select class="form-control" name="category" id="category">
-						<option selected> Choose...</option>
+						<option selected></option>
 						<option value="App">App</option>
 						<option value="Main">Main</option>
+						<option value="Side">Side</option>
 						<option value="Dessert">Dessert</option>
+						<option value="Drink">Drink</option>
 						<option value="Other">Other</option>
 					</select>
 				</div>
@@ -60,13 +77,13 @@
 			<!-- Table which holds each ingredient -->
 			<div class="flex-container-wrap">
 				<div class="flex-child-label">
-					<h3><strong>Ingredients</strong></h3>
+					<label>Ingredients</label>
 				</div>
 				<div class="flex-child-value">
 					<div class="ingredients">
 						<table id="ingredientsTable" class="table ingr-list">
 							<!-- Headers-->
-							<thead>
+							<thead class="form-control-thead">
 								<tr>
 									<td>Ingredient</td>
 									<td>Amount</td>
@@ -78,16 +95,17 @@
 							<tbody>
 								<tr>
 									<td>
-										<input type="text" name = "ingredients[][name]" id="name" class="form-control"/>
+										<input type="text" placeholder="Garlic" name = "ingredients[][name]" id="name" class="form-control"/>
 									</td>
 									<td>
-										<input type="number" name = "ingredients[][amount]" id="amount"  class="form-control"/>
+										<input type="number" placeholder="6" name = "ingredients[][amount]" id="amount"  class="form-control-number"/>
 									</td>
 									<td>
-										<input type="text" name = "ingredients[][measure]" id="measure"  class="form-control"/>
+										<input type="text" placeholder="Cloves" name = "ingredients[][measure]" id="measure"  class="form-control"/>
 									</td>
 									<td>
-										<input type="text" name = "ingredients[][notes]" id="notes"  class="form-control"/>
+										<textarea class="form-control" rows="2" cols="30" placeholder="We prefer minced, but sliced is OK too..." name = "ingredients[][notes]" id="notes"></textarea>
+										<!-- <input type="text" placeholder="We prefer minced, but sliced is OK too..." name = "ingredients[][notes]" id="notes"  class="form-control"/> -->
 									</td>
 									<td><a class="delRowHolder"></a></td>
 								</tr>
@@ -96,7 +114,7 @@
 							<tfoot>
 								<tr>
 									<td colspan="1">
-										<input type="button" class="button1" id="addIngredient" value="+ Add Ingredient"/>
+										<input type="button" class="add-button" id="addIngredient" value="+"/>
 									</td>
 								</tr>
 							</tfoot>
@@ -107,7 +125,7 @@
 			
 			<div class="flex-container-wrap">
 				<div class="flex-child-label">
-					<h3><strong>Directions</strong></h3>
+					<label>Directions</label>
 				</div>
 				<div class="flex-child-value">
 					<div class="directions">
@@ -117,7 +135,7 @@
 							<tbody>
 								<tr>
 									<td>
-										 <textarea class="form-control" rows="3" cols="50" placeholder="Step 1" name="directions[]" id="direction"></textarea>
+										 <textarea class="form-control" rows="2" cols="95" placeholder="Step 1" name="directions[]" id="direction"></textarea>
 									</td>
 									<td><a class="delRowHolder"></a></td>
 								</tr>
@@ -126,7 +144,7 @@
 							<tfoot>
 								<tr>
 									<td colspan="1">
-										<input type="button" class="button1" id="addDirection" value="+ Add Step"/>
+										<input type="button" class="add-button" id="addDirection" value="+"/>
 									</td>
 								</tr>
 							</tfoot>
@@ -138,7 +156,7 @@
 			<!-- Upload image of the meal -->
 			<div class="flex-container-wrap">
 				<div class="flex-child-label" id="picture">
-					<h3><strong>Image (Optional)</strong></h3>
+					<label>Image (optional) </label>
 				</div>
 				<div class="flex-child-value">
 					<!-- <input type="file" class="form-control" name="picture" id="picture" />-->
@@ -153,10 +171,13 @@
 
 			<!-- submit button for the form to be sent -->
 			<div class="flex-container-wrap">
-				<div class="flex-child-label">
+				<div class="flex-child-value" id="back">
+					<a href="index.html">
+						<input type="button" class="back-button" id="goBack" value="Cancel"/>
+					</a>
 				</div>
 				<div class="flex-child-right" id="submit">
-					<input type="button" class="button4" id="submitRecipe" value="Create Recipe"/>
+					<input type="button" class="submit-button" id="submitRecipe" value="Create Recipe"/>
 				</div>
 			</div>
 			
