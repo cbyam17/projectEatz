@@ -41,52 +41,26 @@
 
 			//add recipe ingredients table
 			var ingredients = dataJSON.ingredients;
+			
+			//create new table
 			var table = document.createElement("table");
-			//build table head
-			/*var tableHead = document.createElement("thead");
-			var tableHeadRow = document.createElement("tr");
-			var tableHeadIngredient = document.createElement("td");
-			var tableHeadAmount = document.createElement("td");
-			var tableHeadMeasure = document.createElement("td");
-			var tableHeadNotes = document.createElement("td");
-			var nameLabel = document.createTextNode("Ingredient");
-			var amountLabel = document.createTextNode("Amount");
-			var measureLabel = document.createTextNode("Measure");
-			var notesLabel = document.createTextNode("Notes");
-			tableHeadIngredient.appendChild(nameLabel);
-			tableHeadAmount.appendChild(amountLabel);
-			tableHeadMeasure.appendChild(measureLabel);
-			tableHeadNotes.appendChild(notesLabel);
-			tableHeadRow.appendChild(tableHeadAmount);
-			tableHeadRow.appendChild(tableHeadMeasure);
-			tableHeadRow.appendChild(tableHeadIngredient);
-			tableHeadRow.appendChild(tableHeadNotes);
-			tableHead.appendChild(tableHeadRow);*/
-			//for each ingredient, build table body
 			var tableBody = document.createElement("tbody");
 			for (i=0; i<ingredients.length; i++){
 				//console.log(ingredients[i]);
 				var tableRow = document.createElement("tr");
 				var ingredientData = document.createElement("td");
-				var amountData = document.createElement("td");
-				var measureData = document.createElement("td");
-				var notesData = document.createElement("td");
-				var ingredientText = document.createTextNode(ingredients[i].name);
-				var amountText = document.createTextNode(ingredients[i].amount);
-				var measureText = document.createTextNode(ingredients[i].measure);
-				var notesText = document.createTextNode(ingredients[i].notes);
+				var ingredientText;
+				if (ingredients[i].notes !== ''){
+					ingredientText = document.createTextNode(ingredients[i].amount + ' ' + ingredients[i].ingredient + ' (' + ingredients[i].notes + ')');
+				}
+				else{
+					ingredientText = document.createTextNode(ingredients[i].amount + ' ' + ingredients[i].ingredient);
+				}
 				ingredientData.appendChild(ingredientText);
-				amountData.appendChild(amountText);
-				measureData.appendChild(measureText);
-				notesData.appendChild(notesText);
-				tableRow.appendChild(amountData);
-				tableRow.appendChild(measureData);
 				tableRow.appendChild(ingredientData);
-				tableRow.appendChild(notesData);
 				tableBody.appendChild(tableRow);
 			}
 			//add table head and body to new table, then add new table to ingredients
-			//table.appendChild(tableHead);
 			table.appendChild(tableBody);
 			var element = document.getElementById("ingredients");
 			element.appendChild(table);				

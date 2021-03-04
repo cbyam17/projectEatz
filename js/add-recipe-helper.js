@@ -13,10 +13,10 @@ $(document).ready(function () {
         var cols = "";
 
         // forms that will be added
-		cols += '<td><input type="text" class="form-control" name = "ingredients[][name]" id="name"/></td>';
         cols += '<td><input type="number" class="form-control-number" name = "ingredients[][amount]" id="amount"/></td>';
-        cols += '<td><input type="text" class="form-control" name = "ingredients[][measure]" id="measure"/></td>';        
-		cols += '<td><textarea class="form-control" rows="2" cols="30" name = "ingredients[][notes]" id="notes"></textarea></td>';
+		cols += '<td><input type="text" class="form-control" name = "ingredients[][ingredient]" id="name"/></td>';
+        //cols += '<td><input type="text" class="form-control" name = "ingredients[][measure]" id="measure"/></td>';        
+		cols += '<td><input type="text" name = "ingredients[][notes]" id="notes" class="form-control"></input></td>';
         cols += '<td><input type="button" class="delete-button" value="x"></td>';
         newRow.append(cols);
         $("#ingredientsTable tbody").append(newRow);
@@ -29,7 +29,7 @@ $(document).ready(function () {
         var cols = "";
 
         // forms that will be added
-        cols += '<td> <textarea class="form-control" rows="2" cols="95" name="directions[]" id="direction"></textarea></td>';
+        cols += '<td> <textarea class="form-control" rows="2" cols="61" name="directions[]" id="direction"></textarea></td>';
         cols += '<td><input type="button" class="delete-button" value="x"</td>';
         newRow.append(cols);
         $("#directionsTable tbody").append(newRow);

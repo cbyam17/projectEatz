@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <title>Add Recipe</title>
+  <title>Edit Recipe</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/forms.css">
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.serializejson.js"></script>
-  <script type="text/javascript" src="js/add-recipe-helper.js"></script>
+  <script type="text/javascript" src="js/update-recipe-helper.js"></script>
 </head>
 
 <body>
@@ -31,14 +31,14 @@
 	<section>
 		<div class="flex-container-wrap">
 				<div>
-					<h1><strong>Add a Recipe</strong></h1>
+					<h1><strong>Edit Recipe</strong></h1>
 				</div>
 		</div>
 		 <form class="form" name="addRecipeForm" id="addRecipeForm" accept-charset="utf-8" autocomplete="on">        
 			<!-- Recipe name form and headers for page -->
 	 
 			<div class="flex-container-wrap">
-				<div class="flex-child-label" id=recipeName>
+				<div class="flex-child-label">
 					<label>Name</label>
 				</div>
 				<div class="flex-child-value">
@@ -47,7 +47,7 @@
 			</div>
 			
 			<div class="flex-container-wrap">
-				<div class="flex-child-label" id="description">
+				<div class="flex-child-label">
 					<label>Description</label>
 				</div>
 				<div class="flex-child-value">
@@ -57,7 +57,7 @@
 
 			<!-- Drop down bar menu for meal type -->
 			<div class="flex-container-wrap">
-				<div class="flex-child-label" id=category>
+				<div class="flex-child-label">
 					<label>Category</label>
 				</div>
 				<div class="flex-child-value">
@@ -80,9 +80,9 @@
 					<label>Ingredients</label>
 				</div>
 				<div class="flex-child-value">
-					<div id = "ingredients" class="ingredients">
+					<div class="ingredients" id="ingredientsDiv">
 						<table id="ingredientsTable" class="table ingr-list">
-							<!-- Headers-->
+							
 							<thead class="form-control-thead">
 								<tr>
 									<td>Amount</td>
@@ -90,8 +90,8 @@
 									<td>Notes</td>
 								</tr>
 							</thead>
-							<!-- Preexisting forms -->
-							<tbody>
+							
+							<!--<tbody>
 								<tr>
 									<td>
 										<input type="number" placeholder="2" name = "ingredients[][amount]" id="amount"  class="form-control-number"/>
@@ -101,12 +101,11 @@
 									</td>
 									<td>
 										<input type="text" name = "ingredients[][notes]" id="notes" class="form-control"></input>
-										<!-- <input type="text" placeholder="We prefer minced, but sliced is OK too..." name = "ingredients[][notes]" id="notes"  class="form-control"/> -->
 									</td>
 									<td><a class="delRowHolder"></a></td>
 								</tr>
-							</tbody>
-							<!-- Add Ingredient Button under table -->
+							</tbody>-->
+							
 							<tfoot>
 								<tr>
 									<td colspan="1">
@@ -173,7 +172,7 @@
 					</a>
 				</div>
 				<div class="flex-child-right" id="submit">
-					<input type="button" class="submit-button" id="submitRecipe" value="Create Recipe"/>
+					<input type="button" class="submit-button" id="submitRecipe" value="Submit Changes"/>
 				</div>
 			</div>
 			
