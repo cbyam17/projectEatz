@@ -5,7 +5,6 @@
 */
 
 $(document).ready(function () {
-    var counter = 0;
 
     // function which is called when Div ID = addIngredient is clicked (AKA add Ingredient button)
     $("#addIngredient").on("click", function () {
@@ -13,14 +12,14 @@ $(document).ready(function () {
         var cols = "";
 
         // forms that will be added
-		cols += '<td><input type="text" class="form-control" name = "ingredients[][name]" id="name"/></td>';
         cols += '<td><input type="number" class="form-control-number" name = "ingredients[][amount]" id="amount"/></td>';
-        cols += '<td><input type="text" class="form-control" name = "ingredients[][measure]" id="measure"/></td>';        
-		cols += '<td><textarea class="form-control" rows="2" cols="30" name = "ingredients[][notes]" id="notes"></textarea></td>';
-        cols += '<td><input type="button" class="delete-button" value="x"></td>';
+		cols += '<td><input type="text" class="form-control" name = "ingredients[][ingredient]" id="name"/></td>';
+        //cols += '<td><input type="text" class="form-control" name = "ingredients[][measure]" id="measure"/></td>';        
+		cols += '<td><input type="text" name = "ingredients[][notes]" id="notes" class="form-control"></input></td>';
+        cols += '<td><button class="delete-button"> <i class="fa fa-minus"></i></button>';
         newRow.append(cols);
         $("#ingredientsTable tbody").append(newRow);
-        counter++;
+		return false;
     });
 	
 	// function which is called when Div ID = addInstruction is clicked (AKA add Instruction button)
@@ -29,17 +28,17 @@ $(document).ready(function () {
         var cols = "";
 
         // forms that will be added
-        cols += '<td> <textarea class="form-control" rows="2" cols="95" name="directions[]" id="direction"></textarea></td>';
-        cols += '<td><input type="button" class="delete-button" value="x"</td>';
+        cols += '<td> <textarea class="form-control" rows="2" cols="61" name="directions[]" id="direction"></textarea></td>';
+        cols += '<td><button class="delete-button"> <i class="fa fa-minus"></i></button>';
         newRow.append(cols);
         $("#directionsTable tbody").append(newRow);
-        counter++;
+		return false;
     });
 	
     // function which is called when class = btnDel is called (AKA Remove Ingredient button)
     $("table.ingr-list").on("click",".delete-button",function (event) {
         $(this).closest("tr").remove();       
-        counter -= 1;
+        return false;
     });
 	
 	$("#submitRecipe").on('click', function() {

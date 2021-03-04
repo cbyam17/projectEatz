@@ -3,6 +3,8 @@
 <head>
   <title>Recipe Details</title>  
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/jquery.min.js"></script> 
   <script type="text/javascript" src="js/view-recipe-helper.js"></script>
 </head>
@@ -31,33 +33,24 @@
 			<div id="recipeName"></div>
 		</div>
 		
-		<div class="flex-container-nowrap">
-			<!-- will need to be replaced from image from s3 bucket -->
-			<div id="picture">
-				<img src="img/Burger.jpg" alt="twitter" width="200" height="200">
+		<div class="flex-container-wrap">
+			<div>
+				<a href="update-recipe.html?recipeId=4QbeZj-vibNdBi2AUHS6zQ"> <!-- hardcoded now, but will need to be done programmatically-->
+					<button class="submit-button"> <i class="fa fa-edit"></i></button>
+				</a>
 			</div>
-			
-			<div id="description"></div>
 		</div>
 		
 		<div class="flex-container-nowrap">
-			<div class="card">
-				<div class="container" id="category">
-					<h3 id="categoryLabel"><strong>Category</strong></h3>
-				</div>
+			<!-- will need to be replaced from image from s3 bucket -->
+			<div id="picture" class="flex-child-center">
+				<img src="img/Burger.jpg" alt="twitter" width="200" height="200">
 			</div>
-			<div class="card">
-				<div class="container" id="servings">
-					<h3 id="servingsLabel"><strong>Servings</strong></h3>
-					<p>1</p>
-				</div>
+			<div id="description">
 			</div>
-			<div class="card">
-				<div class="container" id="prepTime">
-					<h3 id="prepTimeLabel"><strong>Prep Time</strong></h3>
-					<p>45 minutes</p>
-				</div>
-			</div>		
+			<div id="category">
+				<h3 id="categoryLabel"><strong>Category</strong></h3>
+			</div>
 		</div>
 		
 		<div class="flex-container-wrap">
