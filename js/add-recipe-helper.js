@@ -21,6 +21,7 @@ $(document).ready(function () {
         newRow.append(cols);
         $("#ingredientsTable tbody").append(newRow);
         counter++;
+		return false;
     });
 	
 	// function which is called when Div ID = addInstruction is clicked (AKA add Instruction button)
@@ -34,6 +35,7 @@ $(document).ready(function () {
         newRow.append(cols);
         $("#directionsTable tbody").append(newRow);
         counter++;
+		return false;
     });
 	
     // function which is called when class = btnDel is called (AKA Remove Ingredient button)

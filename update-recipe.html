@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.serializejson.js"></script>
   <script type="text/javascript" src="js/update-recipe-helper.js"></script>
@@ -44,6 +45,7 @@
 				<div class="flex-child-value">
 					<input type="text" placeholder="My Super Awesome Recipe" size="48" class="form-control" name="recipeName" id="recipeName">
 				</div>
+				
 			</div>
 			
 			<div class="flex-container-wrap">
@@ -109,7 +111,8 @@
 							<tfoot>
 								<tr>
 									<td colspan="1">
-										<input type="button" class="add-button" id="addIngredient" value="+"/>
+										<!--<input type="button" class="add-button" id="addIngredient"/>-->
+										<button id="addIngredient" class="add-button"> <i class="fa fa-plus"></i></button>
 									</td>
 								</tr>
 							</tfoot>
@@ -125,8 +128,7 @@
 				<div class="flex-child-value">
 					<div class="directions">
 						<table id= "directionsTable" class="table ingr-list">
-							<!-- Headers-->
-							<!-- Preexisting forms -->
+							<!-- 
 							<tbody>
 								<tr>
 									<td>
@@ -139,7 +141,8 @@
 							<tfoot>
 								<tr>
 									<td colspan="1">
-										<input type="button" class="add-button" id="addDirection" value="+"/>
+										<!--<input type="button" class="add-button" id="addDirection" value="+"/>-->
+										<button id="addDirection" class="add-button"> <i class="fa fa-plus"></i></button>
 									</td>
 								</tr>
 							</tfoot>
@@ -167,12 +170,10 @@
 			<!-- submit button for the form to be sent -->
 			<div class="flex-container-wrap">
 				<div class="flex-child-value" id="back">
-					<a href="index.html">
-						<input type="button" class="back-button" id="goBack" value="Cancel"/>
-					</a>
+					<input type="button" class="back-button" id="cancel" value="Cancel"/>
 				</div>
 				<div class="flex-child-right" id="submit">
-					<input type="button" class="submit-button" id="submitRecipe" value="Submit Changes"/>
+					<input type="button" class="submit-button" id="submitRecipe" value="Save Changes"/>
 				</div>
 			</div>
 			
