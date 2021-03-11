@@ -85,3 +85,15 @@
 			var element = document.getElementById("directions");
 			element.appendChild(table);
 		}
+		
+$(document).ready(function () {
+	
+		//function to go to update recipe page when edit recipe button is clicked
+		//<a href="update-recipe.html?recipeId=4QbeZj-vibNdBi2AUHS6zQ"> <!-- hardcoded now, but will need to be done programmatically-->
+	$("#editRecipe").on('click', function() {
+		var queryString = window.location.href.split('/').pop();
+		var recipeId = queryString.split('=').pop();
+		var url = "update-recipe.html?recipeId=" + recipeId;
+		window.location.href = url;
+	});
+});
