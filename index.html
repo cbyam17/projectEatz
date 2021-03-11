@@ -3,32 +3,28 @@
 <head>
 	<title>Project Eatz</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/nav-bar-helper.js"></script> 
 </head>
 <body>
 
 	<section>
-		<div class="navbar-fixed-top">
-			<div class="flex-container-nowrap">
-				<div class="flex-child-value">
-					<a href="index.html">
-						<img src="img/Project-Eatz.png" alt="project-eatz" width="75" height="75">
-					</a>
-				</div>
-				<div class="flex-child-right-nav">
-					<a href="index.html" class="center">
-						<img src="img/search-icon.png" alt="search" width="40" height="40">
-					</a>
-				</div>
-			</div>
-		</div>
+		<ul id="navBar" class="nav-bar-ul">
+		  <li class="nav-bar-li"><a href="index.html">Home</a></li>
+		  <li class="nav-bar-li"><a href="about-us.html">About Us</a></li>
+		  <li class="nav-bar-li"><a href="login.html">Login</a></li>
+		  <li class="nav-bar-li" style="float:right"><a onClick="showSearchBox()"><i class="fa fa-search w3-xlarge"></i></a></li>
+		</ul>
 	</section>
 	
 	<section>
-		<div class="flex-container-nowrap">
-			<div class="flex-child-center">
-				<img src="img/Project-Eatz.png" alt="project-eatz" width="200" height="200">
-				<p>Bringing Grandma's cookbook to the cloud</p>
-			</div>
+		<div class="background">
+		  <div class="transbox">
+			<img src="img/Project-Eatz.png" alt="project-eatz" width="200" height="200">
+			<h3>Bringing Grandma's cookbook to the cloud</h3>
+		  </div>
 		</div>
 	</section>
 
@@ -44,7 +40,7 @@
 				<a href="add-recipe.html">
 					<div class="container" id="addRecipe">
 					<br>
-						<img src="img/plus-icon.png" alt="plus" width="50" height="50">
+						<i class="fa fa-plus w3-xxlarge"></i>
 						<h3><strong>Add a recipe</strong></h3>
 						<p>Add your latest culinary creation to the cookbook</p>
 					</div>
@@ -54,8 +50,8 @@
 				<a href="browse-recipes.html">
 					<div class="container" id="browseRecipes">
 					<br>
-						<img src="img/browse-icon.png" alt="browse" width="50" height="50">
-						<h3><strong>Browse recipes</strong></h3>
+						<i class="fa fa-book w3-xxlarge"></i>
+						<h3><strong>Browse cookbook</strong></h3>
 						<p>Find something to quiet the stomach rumbling</p>
 					</div>
 				</a>
@@ -64,7 +60,7 @@
 				<a href="view-recipe.html?recipeId=4QbeZj-vibNdBi2AUHS6zQ">
 					<div class="container" id="randomRecipe">
 					<br>
-						<img src="img/random-icon.png" alt="random" width="50" height="50">
+						<i class="fa fa-random w3-xxlarge"></i>
 						<h3><strong>View a random recipe</strong></h3>
 						<p>Feeling lucky?</p>
 					</div>
@@ -76,11 +72,11 @@
 	<section>
 		<div class="flex-container-nowrap">
 			<div class="flex-child-center">
-				<h3> <strong>Follow Us!</strong> </h3>
+				<h3> <strong>Join the movement</strong> </h3>
 				<div>
-						<img src="img/twitter-icon.png" alt="twitter" width="50" height="50">
-						<img src="img/insta-icon.png" alt="twitter" width="50" height="50">
-						<img src="img/facebook-icon.png" alt="twitter" width="50" height="50">
+						<i class="fa fa-twitter w3-xxlarge"></i>
+						<i class="fa fa-instagram w3-xxlarge"></i>
+						<i class="fa fa-facebook w3-xxlarge"></i>
 				</div>
 			</div>
 		</div>
