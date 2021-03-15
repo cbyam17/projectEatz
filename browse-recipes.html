@@ -5,6 +5,7 @@
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/buttons.css">
   <script type="text/javascript" src="js/jquery.min.js"></script> 
+  <script type="text/javascript" src="js/browse-recipe-helper.js"></script> 
 </head>
 
 <body>
@@ -34,7 +35,7 @@
 		
 		<div class="flex-container-nowrap">
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Apps')">
 					<div class="container" id="apps">
 					<br>
 						<h3><strong>Apps</strong></h3>
@@ -43,7 +44,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Main')">
 					<div class="container" id="mains">
 					<br>
 						<h3><strong>Mains</strong></h3>
@@ -52,7 +53,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Side')">
 					<div class="container" id="randomRecipe">
 					<br>
 						<h3><strong>Sides</strong></h3>
@@ -64,7 +65,7 @@
 		
 		<div class="flex-container-nowrap">
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Dessert')">
 					<div class="container" id="desserts">
 					<br>
 						<h3><strong>Desserts</strong></h3>
@@ -73,7 +74,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Drink')">
 					<div class="container" id="drinks">
 					<br>
 						<h3><strong>Drinks</strong></h3>
@@ -82,7 +83,7 @@
 				</a>
 			</div>
 			<div class="card">
-				<a href="index.html">
+				<a href="javascript:getRecipeList('Other')">
 					<div class="container" id="other">
 					<br>
 						<h3><strong>Others</strong></h3>
@@ -94,14 +95,13 @@
 		
 		<div class="flex-container-nowrap">
 			<div>
-				<h3><strong> Placeholder for filter results </strong></h3>
-				<table>
+				<table id="recipeTable" class="table recipe-list">
 					<thead>
 						<tr>
-							<td>Recipe Name</td>
-							<td>Description</td>
-							<td>Category</td>
-							<td>Image</td>
+							<td><strong>Recipe Name</strong></td>
+							<td><strong>Description</strong></td>
+							<td><strong>Category</strong></td>
+							<td><strong>Image</strong></td>
 						</tr>
 					</thead>
 				</table>
