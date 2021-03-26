@@ -45,7 +45,7 @@ $(document).ready(function () {
 		
 		//serialize form data as formatted JSON object (this doesn't capture the picture)
 		var dataJSON = $('#addRecipeForm').serializeJSON();
-		console.log(dataJSON);
+		var recipeID = '';
 		
 		var postUrl = 'https://d8qga9j6ob.execute-api.us-east-1.amazonaws.com/dev/recipe';
 		var authToken = '0eb6b64d-4aee-40d9-908d-4846044ee0f0';
@@ -53,7 +53,7 @@ $(document).ready(function () {
 		// Example POST method implementation:
 		async function postData(url = '', data = {}) {
 		  // Default options are marked with *
-		  const response = await fetch(url, {
+		  const answer = await fetch(url, {
 			method: 'POST', // *GET, POST, PUT, DELETE, etc.
 			mode: 'cors', // no-cors, *cors, same-origin
 			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -65,22 +65,27 @@ $(document).ready(function () {
 			redirect: 'follow', // manual, *follow, error
 			referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
 			body: JSON.stringify(data) // body data type must match "Content-Type" header
+		  })
+		  .then(response => response.json()) 
+		  .then (data => {
+			alert('Successful add of recipe!');
+			recipeID = data.recipeId;
+		  })
+		  .catch(error => {
+			alert('Failure to add recipe');
 		  });
-		  return response.json(); // parses JSON response into native JavaScript objects
 		}
 
-		postData(postUrl, dataJSON)
+		result = postData(postUrl, dataJSON)
 		  .then(data => {
-			uploadPicture(data); // JSON data parsed by `data.json()` call
+			uploadPicture(recipeID); // JSON data parsed by `data.json()` call
 		  });
 		
 		//get response from this post, save the recipeId returned, and then add to s3 with the name of that id
-		function uploadPicture(data){
-			//console.log(data);
-			//for now, redirect user to view the recipe they just created
-			var recipeId = data.recipeId;
-			var url = "view-recipe.html?recipeId=" + recipeId;
-			window.location.href = url;
+		function uploadPicture(recipeID){
+			if (recipeID !==  '') {
+				alert('Got to loading picture =' + recipeID);
+			}
 		}
 				
 	});
