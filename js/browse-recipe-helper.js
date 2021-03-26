@@ -4,6 +4,10 @@
 		var authToken = '0eb6b64d-4aee-40d9-908d-4846044ee0f0';
 		var req = 'https://d8qga9j6ob.execute-api.us-east-1.amazonaws.com/dev/recipe?category=' + catRecipe;
 		
+		// set cursor to waiting
+		document.getElementById("recipeBody").style.cursor = "progress"; 
+		
+
 		
 		//get recipe list then parse response and build html for page
 		fetch(req, {
@@ -24,6 +28,9 @@
 			// Handle the error
 			console.log(error);
 		  });
+
+		  // return cursor to default
+		  document.getElementById("recipeBody").style.cursor = "default";
 		
 		function populateRecipeDetails(dataJSON, cat){
 
@@ -39,7 +46,7 @@
 				var descrData = document.createElement("td");
 				var catData = document.createElement("td");
 
-				var nameText = document.createTextNode(dataJSON[i].name);
+				var nameText = document.createTextNode(dataJSON[i].recipeName);
 
 				//create link to open recipe
 				var createA  = document.createElement('a');
