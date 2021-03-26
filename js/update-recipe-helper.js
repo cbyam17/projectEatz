@@ -200,6 +200,25 @@ $(document).ready(function () {
 		var recipeId = queryString.split('=').pop();
 		var url = "view-recipe.html?recipeId=" + recipeId;
 		window.location.href = url;
-	});	
+	});
+	
+	$('#file-input').change(function() {
+		//var i = $(this).prev('label').clone();
+		var imgDiv = document.getElementById("image-div");
+		var file = $('#file-input')[0].files[0].name;
+		var p = document.createElement("p");
+		p.id = "filename";
+		var fileText = document.createTextNode(file);
+		
+		//check for existing file already uploaded
+		var existingFilename = document.getElementById("filename");
+		if (existingFilename !== null){
+			imgDiv.removeChild(existingFilename);
+		}
+		
+		//add filename to form
+		p.appendChild(fileText);
+		imgDiv.appendChild(p);
+	});
 	
 });
