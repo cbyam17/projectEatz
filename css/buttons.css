@@ -11,22 +11,17 @@
 	text-decoration:none;
 	font-family:'Roboto',sans-serif;
 	font-weight:300;
-	color:#FFFFFF;
-	background-color: #1fc600;
+	color:#1fc600;	
+	background-color: #FFFFFF;
 	border:none;
 	text-align:center;
 	transition: all 0.2s;
+	cursor: pointer;
 }
 
-.add-button:hover{
+/*.add-button:hover{
 	background-color:#089000;
-}
-@media all and (max-width:30em){
-	.button1{
-		display:block;
-		margin:0.2em auto;
-	}
-}
+}*/
 
 /*delete button*/
 .delete-button{
@@ -38,15 +33,16 @@
 	text-decoration:none;
 	font-family:'Roboto',sans-serif;
 	font-weight:300;
-	color:#FFFFFF;
-	background-color:#b53737;
+	color:#b53737;
+	background-color:#FFFFFF;
 	border:none;
 	text-align:center;
 	transition: all 0.2s;
+	cursor: pointer;
 }
-.delete-button:hover{
-	background-color:#800000; /*lighter shade of red*/
-}
+/*.delete-button:hover{
+	background-color:#800000;
+}*/
 
 /*submit button*/
 .submit-button{
@@ -60,14 +56,15 @@
 	font-weight:300;
 	font-size: 18px;
 	color:#FFFFFF;
-	background-color:#4eb5f1;
+	background-color:#009dbd;
 	border:none;
 	text-align:center;
 	transition: all 0.2s;
+	cursor: pointer;
 }
-.submit-button:hover{
-	background-color:#01579b; /*lighter shade of red*/
-}
+/*.submit-button:hover{
+	background-color:#01579b;
+}*/
 
 /*back button*/
 .back-button{
@@ -85,7 +82,27 @@
 	border:none;
 	text-align:center;
 	transition: all 0.2s;
+	cursor: pointer;
 }
-.back-button:hover{
-	background-color:#8594a3; /*lighter shade of red*/
+
+/*.back-button:hover{
+	background-color:#8594a3;
+}*/
+
+.edit-button{
+	display:inline-block;
+	padding:0.3em 1.2em;
+	margin:0 0.3em 0.3em 0;
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:300;
+	font-size: 18px;
+	color:#009dbd;
+	background-color:#FFFFFF;
+	border:none;
+	text-align:center;
+	transition: all 0.2s;
+	cursor: pointer;
 }
