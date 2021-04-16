@@ -1256,3 +1256,60 @@ address span a {
 #footer .fa {
   color: #008ED6;
 }
+
+/* Style sheet for browse results */
+.search-results.search-results-faceted .search-results-content-container {
+  flex: 1 1 auto;
+  display: block;
+}
+
+.search-results-content-results-wrapper.grid-view {
+  display: grid;
+  column-gap: 34px;
+  grid-template-columns: 272px 272px 272px;
+}
+
+.card__facetedSearchResult {
+  vertical-align: top;
+  display: inline-block;
+  margin-bottom: 32px;
+  border-top: 1px solid;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 270px;
+  column-gap: 34px;
+  grid-template-columns: 272px 272px 272px;
+  border: 1px solid rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.card__imageContainer {
+  position: relative;
+  margin-left: 2px;
+  width: 100%;;
+  max-width: 140px;
+  min-width: 140px;
+  color:rgba(0,0,0,0.95);
+}
+
+.card__detailsContainer {
+  padding: 16px;
+}
+
+.card__summary {
+  margin: 8px 0;
+  /* font-family: 'Roboto',sans-serif; */
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  max-height: 40px;
+}
+/* end style sheet for Browse results */

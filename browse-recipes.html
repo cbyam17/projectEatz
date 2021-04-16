@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script type="text/javascript" src="js/jquery.min.js"></script> 
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.834.0.min.js"></script>
   <script type="text/javascript" src="js/browse-recipe-helper.js"></script> 
 </head>
 
@@ -88,27 +89,19 @@
 		</div>
 		
 		<div class="flex-container-nowrap">
-			<div>
-				<table id="recipeTable" class="table recipe-list">
-					<thead>
-						<tr>
-							<td><strong>Recipe Name</strong></td>
-							<td><strong>Description</strong></td>
-							<td><strong>Category</strong></td>
-							<td><strong>Image</strong></td>
-						</tr>
-					</thead>
-				</table>
-			</div>
+			<div id=searchContent>
+				<div id=searchTotal class=searchTotal >	
+				</div>
+				<div id=recipeTable class="search-results-content-results-wrapper grid-view ">
+				</div>
+			</div>     
+		</div>
+		<div class="flex-container-nowrap">
+			<a href="index.html">
+				<input type="button" class="back-button" id="goBack" value="Home"/>
+			</a>
 		</div>
 		
-		<div class="flex-container-nowrap">
-			<div>
-				<a href="index.html">
-					<input type="button" class="back-button" id="goBack" value="Home"/>
-				</a>
-			</div>
-		</div>
 	</section> 
 
  
